@@ -4,6 +4,22 @@
 
 **Drone Fighter** is a reinforcement learning project that demonstrates the Value Iteration algorithm applied to a practical grid world navigation problem. A drone must navigate a 10×10 grid world filled with obstacles, navigate to an objective marked by fire to extinguish it, and return successfully while avoiding hazards.
 
+## Drone Simulation
+
+![Drone Simulation](drone_simulation.gif)
+
+## Value Function and Policy Plots
+
+![Empty Value Function](Value Function for Empty State.png)
+
+![Filled Value Function](Value Function for Filled State.png)
+
+![Empty Policy Plot](Policy Plot for Empty State.png)
+
+![Filled Policy Plot](Policy Plot for Filled State.png)
+
+
+
 ## What This Project Does
 
 This project implements a complete reinforcement learning pipeline:
