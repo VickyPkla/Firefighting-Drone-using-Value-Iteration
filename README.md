@@ -10,13 +10,17 @@
 
 ## Value Function and Policy Plots
 
-![Empty Value Function](Value Function for Empty State.png)
+<table>
+<tr>
+<td><img src="Value_Function_for_Empty_State.png" width="400"></td>
+<td><img src="Value_Function_for_Filled_State.png" width="400"></td>
+</tr>
+<tr>
+<td><img src="Policy_Plot_for_Empty_State.png" width="400"></td>
+<td><img src="Policy_Plot_for_Filled_State.png" width="400"></td>
+</tr>
+</table>
 
-![Filled Value Function](Value Function for Filled State.png)
-
-![Empty Policy Plot](Policy Plot for Empty State.png)
-
-![Filled Policy Plot](Policy Plot for Filled State.png)
 
 
 
