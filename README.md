@@ -1,8 +1,8 @@
-# Drone Fighter: Grid World Navigation Using Value Iteration
+# Fighterfighting Drone: Grid World Navigation Using Value Iteration
 
 ## Overview
 
-**Drone Fighter** is a reinforcement learning project that demonstrates the Value Iteration algorithm applied to a practical grid world navigation problem. A drone must navigate a 10×10 grid world filled with obstacles, navigate to an objective marked by fire to extinguish it, and return successfully while avoiding hazards.
+**Fighterfighting Drone** is a reinforcement learning project that demonstrates the Value Iteration algorithm applied to a practical grid world navigation problem. A drone must navigate a 10×10 grid world filled with obstacles, navigate to an objective marked by fire to extinguish it, and return successfully while avoiding hazards.
 
 ## Drone Simulation
 
