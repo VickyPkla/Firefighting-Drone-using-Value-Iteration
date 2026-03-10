@@ -63,97 +63,13 @@ The drone must:
 ```
 ├── drone_fighter.ipynb          # Main Jupyter notebook with complete implementation
 ├── Drone Simulation.gif         # Animated demo of drone navigation
-├── Policy Plot for Empty State.png    # Optimal policy visualization (w=0)
-├── Policy Plot for Filled State.png   # Optimal policy visualization (w=1)
-├── Value Function for Empty State.png # State values visualization (w=0)  
-├── Value Function for Filled State.png # State values visualization (w=1)
-└── README.md                    # This file
+├── Policy_Plot_for_Empty_State.png    # Optimal policy visualization (w=0)
+├── Policy_Plot_for_Filled_State.png   # Optimal policy visualization (w=1)
+├── Value_Function_for_Empty_State.png # State values visualization (w=0)  
+├── Value_Function_for_Filled_State.png # State values visualization (w=1)
+└── README.md                   
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.7+
-- Jupyter Notebook or JupyterLab
-- Required packages: `numpy`, `matplotlib`, `imageio`
-
-### Installation
-
-1. **Clone or download the project** and navigate to the project directory:
-   ```bash
-   cd "Grid World Navigation using Value Iteration"
-   ```
-
-2. **Create a virtual environment** (recommended):
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   
-   Or manually install required packages:
-   ```bash
-   pip install numpy matplotlib imageio
-   ```
-
-### Usage
-
-1. **Open the Jupyter notebook**:
-   ```bash
-   jupyter notebook drone_fighter.ipynb
-   ```
-
-2. **Run all cells** in sequence. The notebook will:
-   - Define the grid world environment with obstacles
-   - Run Value Iteration to compute optimal values and policies
-   - Display visualizations of the learned value functions and policies
-   - Simulate drone navigation and generate an animated GIF
-
-3. **View outputs**:
-   - **Value Function Plots**: Show the computed value for each position in both water states (w=0 and w=1)
-   - **Policy Plots**: Display optimal action at each position (↑↓←→ for directions, • for holding water)
-   - **Drone Simulation GIF**: Animated trajectory showing the drone following the learned policy
-
-### Example Output
-
-After running the notebook, you'll see:
-- Convergence confirmation: "Value Iteration Converged"
-- Four visualization plots demonstrating the learned policy and value function
-- An animated GIF (`drone_simulation.gif`) showing the drone solving the grid world
-
-## Understanding the Algorithm
-
-### Value Iteration
-
-The notebook implements the standard Value Iteration algorithm:
-
-```
-Initialize V(s) = 0 for all states
-While convergence not achieved:
-    For each state s:
-        V(s) = max_a Σ P(s'|s,a)[R(s,a,s') + γV(s')]
-    If max change in V < θ: break
-```
-
-### State Representation
-
-Each state is represented as a tuple `(row, column, water)` where:
-- `row`: Y-coordinate (0-9)
-- `column`: X-coordinate (0-9)
-- `water`: Binary flag (0 = no water, 1 = carrying water from lake)
-
-This gives a state space of 10 × 10 × 2 = 200 states.
-
-### Environment Dynamics
-
-Movement is stochastic - the intended action may not occur due to environmental factors (wind, terrain). The transition probabilities vary based on location:
-- **Open areas**: Higher probability of intended action (70%)
-- **Smoke zones**: Lower probability of intended action (40%), higher chance of staying still (40%)
 
 ## Customization
 
@@ -165,43 +81,3 @@ You can modify the notebook to experiment with different configurations:
 - **Convergence Threshold**: Adjust `theta` (1e-8) for faster/more precise convergence
 - **Obstacle Placement**: Modify `boulders`, `smoke`, `lake`, and `fire` sets
 - **Step Limit**: Adjust `max_steps` in the `simulate()` function
-
-## Interpretation Guide
-
-### Policy Visualization
-- **↑ ↓ ← →**: Directional movement in each state (North, South, West, East)
-- **•**: Hold action (wait; used to collect water at lake)
-- **Colored cells**:
-  - Blue: Lake (water source)
-  - Red: Fire (objective)
-  - Gray: Smoke (hazardous areas)
-  - Dark gray: Boulders (obstacles)
-  - White: Open space
-
-### Value Function Visualization
-- Numbers represent the expected cumulative reward starting from that position following the optimal policy
-- Higher values indicate more favorable starting positions
-- Terminal states (boulders and fire after extinguishing) show no value
-
-## How to Get Help
-
-- **Documentation**: Review the comments and markdown cells in the Jupyter notebook
-- **Algorithm Questions**: Refer to standard RL textbooks (e.g., Sutton & Barto's "Reinforcement Learning: An Introduction")
-- **Grid World Problems**: Common benchmark problems in RL literature with well-established solutions
-
-## Contributing
-
-This is a demonstration project for educational purposes. If you'd like to:
-- Improve the code or documentation
-- Add new features (different grid types, multiple agents, different algorithms)
-- Fix bugs or enhance visualizations
-
-Feel free to create an improved version for your learning purposes.
-
-## License
-
-This project is provided as-is for educational and learning purposes.
-
----
-
-**Happy Learning!** This project demonstrates key concepts in reinforcement learning including state representation, value iteration, policy optimization, and environmental simulation. Feel free to experiment with different parameters to deepen your understanding of how algorithms learn optimal behaviors.
